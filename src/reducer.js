@@ -1,7 +1,7 @@
 import { GET_DASHBOARD_DETAILS, GET_LOGIN_DETAILS } from "./action";
 const initialState = {
-  dashboardDetails: [{}],
-  loginData: {},
+  dashboardDetails: [],
+  loginData: "",
 };
 export const rootReducer = (state = initialState, action) => {
   switch (action.type) {

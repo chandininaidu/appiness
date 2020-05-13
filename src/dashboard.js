@@ -10,9 +10,13 @@ import {
   Paper,
 } from "@material-ui/core";
 import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 class Dashboard extends React.Component {
   render() {
+    if (this.props.loginData === "") {
+      return <Redirect to="/" />;
+    }
     return (
       <>
         <Card>
@@ -49,6 +53,7 @@ class Dashboard extends React.Component {
 }
 const mapStateToProps = (items) => ({
   dashboardDetails: items.dashboardDetails,
+  loginData: items.loginData,
 });
 
 export default connect(mapStateToProps, {})(Dashboard);
