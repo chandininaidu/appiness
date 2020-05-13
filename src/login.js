@@ -89,8 +89,8 @@ class Login extends React.Component {
           >
             Login
           </Button>
-          {loginData === "failure" && (
-            <div className={classes.invalid}>Invalid Credentials</div>
+          {loginData !== "success" && (
+            <div className={classes.invalid}>{loginData}</div>
           )}
         </Card>
       </>

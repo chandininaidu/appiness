@@ -66,7 +66,14 @@ export const getLoginDetails = (data) => (dispatch) => {
   if (data.username === "hruday@gmail.com" && data.password === "hruday123") {
     dispatch(actions.getLoginDetails("success"));
     dispatch(actions.getDashboardDetails(dashboardDetails));
-  } else {
-    dispatch(actions.getLoginDetails("failure"));
+  } else if (
+    data.username !== "hruday@gmail.com" &&
+    data.password !== "hruday123"
+  ) {
+    dispatch(actions.getLoginDetails("Invalid username and password"));
+  } else if (data.username !== "hruday@gmail.com") {
+    dispatch(actions.getLoginDetails("Invalid username"));
+  } else if (data.password !== "hruday123") {
+    dispatch(actions.getLoginDetails("Invalid password"));
   }
 };
